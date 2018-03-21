@@ -1,0 +1,34 @@
+{
+    "eslint.enable": true,
+    "eslint.validate": [
+        "javascript", {
+            "language": "html",
+            "autoFix": true
+        }, {
+            "language": "vue",
+            "autoFix": true
+        }
+    ],
+    "files.exclude": {
+        "dist": true,
+        "**/.vscode": true,
+        "**/node_modules": true
+    },
+    // Files excluded from counting.
+    "line-counter.excludes": [
+        "**/.vscode/**",
+        "**/node_modules/**",
+        "package-lock.json"
+    ],
+
+    // 
+    "line-counter.includes": [
+        "**/*.js",
+        "**/*.json",
+        "**/*.scss",
+        "**/*.vue",
+        "**/*.index"
+    ],
+    "git.ignoreLimitWarning": true,
+    "terminal.integrated.fontSize": 12
+}

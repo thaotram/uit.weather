@@ -1,0 +1,46 @@
+<template>
+    <div class="row avatars hasShadow">
+        <ai-image class="round avatar"
+                  v-for="(user, index) in users"
+                  :key="index"
+                  :src="user.picture.thumbnail" />
+    </div>
+</template>
+
+<script>
+import axios from 'axios';
+import {
+    components
+} from 'modules';
+
+export default {
+    components: {
+        ...components('items'),
+        ...components('image')
+    },
+    data() {
+        return {
+            users: []
+        };
+    },
+    mounted() {
+        const self = this;
+        axios.get('https://randomuser.me/api/', {
+            params: {
+                inc: 'name,picture',
+                nat: 'vn',
+                gender: 'female',
+                results: 3
+            }
+        }).then(function(response) {
+            self.users = response.data.results;
+        });
+    }
+};
+</script>
+
+<style lang="scss">
+.avatars {
+    
+}
+</style>

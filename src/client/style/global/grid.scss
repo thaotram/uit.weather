@@ -1,0 +1,59 @@
+// unstable
+.row-grid:before,
+.row-grid:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+[class*='col-'] {
+    float: left;
+    min-height: 1px;
+    background: gray;
+    box-sizing: border-box;
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px) {
+    @for $col from 1 through 6 {
+        .col-#{$col} {
+            width: 100%;
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767px) {
+    @for $col from 1 through 6 {
+        .col-#{$col} {
+            width: 100%;
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) {
+    @for $col from 1 through 6 {
+        .col-#{$col} {
+            width: 100% / 6 * $col;
+        }
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) {
+    @for $col from 1 through 6 {
+        .col-#{$col} {
+            width: 100% / 6 * $col;
+        }
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    @for $col from 1 through 6 {
+        .col-#{$col} {
+            width: 100% / 6 * $col;
+        }
+    }
+}

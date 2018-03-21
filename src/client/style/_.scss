@@ -1,0 +1,94 @@
+$in-table: 1px solid rgba(#000, 0.2);
+$out-table: 0px;
+[class*=share-] {
+    // padding: 10px;
+    >table {
+        background: white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        width: calc(100% - 20px);
+        margin: 0 10px;
+        border: $out-table;
+        border-collapse: collapse;
+        >tr {
+            border-top: $out-table;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(#3498db, 0.1)
+            }
+            >td {
+                text-align: center;
+                padding: 15px;
+                border-left: $out-table;
+                border-collapse: collapse;
+                &+td {
+                    border-left: $in-table;
+                }
+            }
+            &+tr {
+                border-top: $in-table;
+            }
+        }
+    }
+}
+
+.share-1>table>tr>td {
+    &:nth-child(1) {
+        width: 20%;
+    }
+    &:nth-child(2) {
+        width: 30%;
+    }
+    &:nth-child(3) {
+        width: 30%;
+    }
+    &:nth-child(4) {
+        width: 20%;
+    }
+}
+
+.share-2>table>tr>td {
+    &:nth-child(1) {
+        width: 20%;
+    }
+    &:nth-child(2) {
+        width: auto;
+    }
+    &:nth-child(3) {
+        width: 20%;
+    }
+}
+
+.share-3>table>tr>td {
+    &:nth-child(1),
+    &:nth-child(2) {
+        width: 20%;
+    }
+    &:nth-child(3) {
+        width: 40%;
+    }
+    &:nth-child(4) {
+        width: 20%;
+    }
+}
+.row[size="50"] { min-height: 50px; }
+[size="50"] .label { padding: 0px 15px; }
+[size="50"] .label > .text { height: 50px; line-height: 50px; font-size: 14.5px; }
+[size="30"] .image { height: 30px; width: 30px; }
+.image[size="30"] { height: 30px; width: 30px; }
+[size="50"] .col.square { width: 50px; }
+[size="40"] .image { height: 40px; width: 40px; }
+.image[size="40"] { height: 40px; width: 40px; }
+[size="40"] .col.square { width: 40px; }
+.row[size="40"] { min-height: 40px; }
+.row[size="20"] { min-height: 20px; }
+[size="20"] .button { min-height: 20px; }
+[size="20"] .button > .br { width: 6px; }
+[size="20"] .button > .slot { padding: 0px 6px; font-size: 11px; }
+[size="20"] .button > .icon { min-height: 20px; line-height: 20px; width: 20px; padding: 0px; font-size: 8px; }
+[size="20"] .button > .text { line-height: 20px; padding: 0px; font-size: 10px; }
+[size="50"] .button { min-height: 50px; }
+[size="50"] .button > .br { width: 15px; }
+[size="50"] .button > .slot { padding: 0px 15px; font-size: 17px; }
+[size="50"] .button > .icon { min-height: 50px; line-height: 50px; width: 50px; padding: 0px; font-size: 20px; }
+[size="50"] .button > .text { line-height: 50px; padding: 0px; font-size: 14.5px; }

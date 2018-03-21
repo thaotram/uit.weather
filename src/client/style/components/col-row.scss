@@ -1,0 +1,65 @@
+.col {
+    flex-direction: column;
+    >.line {
+        margin: 0 auto;
+        min-height: $line-size;
+        width: 100%;
+    }
+}
+
+.row {
+    flex-direction: row;
+    >.line {
+        margin: 0;
+        min-width: $line-size;
+    }
+    &.flex-wrap {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.col,
+.row {
+    display: flex;
+    overflow: hidden;
+    >* {
+        &.noHover {
+            cursor: default!important;
+        }
+        &.full {
+            flex: 1;
+        }
+    }
+    >.line {
+        &.light {
+            background-color: #f0f0f0;
+        }
+        &.dark {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+.hasShadow {
+    overflow: visible;
+}
+
+.scroll {
+    overflow: auto;
+}
+
+.inline-flex {
+    >* {
+        display: inline-flex;
+        vertical-align: middle;
+    }
+}
+
+[capitalize] {
+    text-transform: capitalize;
+}
+
+.pointer {
+    cursor: pointer;
+}
