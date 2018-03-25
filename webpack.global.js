@@ -20,6 +20,8 @@ module.exports = {
                 query: {
                     presets: ['es2015', 'stage-2']
                 }
+            }, {
+                loader: 'vue-import-loader'
             }]
         }, {
             test: /\.scss$/,

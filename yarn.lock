@@ -8202,6 +8202,12 @@ vue-hot-reload-api@^2.2.0, vue-hot-reload-api@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.0.tgz#97976142405d13d8efae154749e88c4e358cf926"
 
+vue-import-loader@phamhongphuc/vue-import-loader#master:
+  version "0.1.5"
+  resolved "https://codeload.github.com/phamhongphuc/vue-import-loader/tar.gz/a792edfd20662755479cba4751b1587d82563d8c"
+  dependencies:
+    cheerio "^1.0.0-rc.2"
+
 vue-loader@^14.2.1:
   version "14.2.2"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-14.2.2.tgz#c8cf3c2e29b6fb2ee595248a2aa6005038a125b3"

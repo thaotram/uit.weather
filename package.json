@@ -82,6 +82,7 @@
     "style-loader": "^0.20.3",
     "vue-eslint-parser": "^2.0.3",
     "vue-hot-reload-api": "^2.3.0",
+    "vue-import-loader": "phamhongphuc/vue-import-loader#master",
     "vue-loader": "^14.2.1",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.1.1",

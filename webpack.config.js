@@ -1,6 +1,5 @@
 var path = require('path');
 var globalConfig = require('./webpack.global');
-var equals = (a, b) => a.toString() == b.toString();
 
 var production = {
     mode: 'production',
@@ -16,11 +15,5 @@ var production = {
     }
 };
 var config = Object.assign({}, globalConfig, production);
-
-config.module
-    .rules.find(rule => equals(rule.test, /\.vue$/))
-    .use.push({
-        loader: path.resolve('./dist/server/config/import.loader.js')
-    });
 
 module.exports = config;
