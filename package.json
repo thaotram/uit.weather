@@ -10,13 +10,14 @@
     "build:client": "webpack",
     "build": "cross-env NODE_ENV=production npm-run-all build:server build:client",
     "run": "cross-env NODE_ENV=production node dist/server/app",
+    "_": "cross-env NODE_ENV=production nodemon dist/server/app",
     "dev": "cross-env NODE_ENV=development nodemon src/server/app.js --exec babel-node",
     "test": "mocha --compilers js:babel-core/register"
   },
-  "mode": "development",
   "nodemonConfig": {
     "watch": [
-      "src/server"
+      "src/server",
+      "dist"
     ]
   },
   "repository": {
@@ -45,13 +46,18 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
     "babel-loader": "^7.1.4",
     "babel-minify": "^0.3.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "chalk": "^2.3.2",
+    "cheerio": "^1.0.0-rc.2",
     "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
+    "esdoc": "^1.0.4",
+    "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^4.19.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-loader": "^2.0.0",
@@ -79,9 +85,11 @@
     "vue-loader": "^14.2.1",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
     "webpack-dev-middleware": "^3.0.1",
     "webpack-dev-server": "^3.1.1",
     "webpack-hot-middleware": "^2.21.2",
-    "webpack-split-by-path": "^2.0.0"
+    "webpack-split-by-path": "^2.0.0",
+    "xml2js": "^0.4.19"
   }
 }

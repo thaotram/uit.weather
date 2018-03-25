@@ -1,7 +1,7 @@
 <template>
     <ai-row class="label">
-        <span class="text"
-              v-if="compiledText !== ''">{{ compiledText }}</span>
+        <span v-if="compiledText !== ''"
+              class="text">{{ compiledText }}</span>
         <slot/>
     </ai-row>
 </template>

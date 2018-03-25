@@ -1,3 +1,7 @@
+/**
+ * 
+ * @param {ádadasd} imgEl 
+ */
 export default function(imgEl) {
     const blockSize = 5;
     const canvas = document.createElement('canvas');

@@ -4,8 +4,8 @@
             <ai-navigator :left="left"
                           :right="right" />
         </ai-contain>
-        <router-view ref="view"
-                     id="view" />
+        <router-view id="view"
+                     ref="view" />
         <ai-footer/>
     </div>
 </template>

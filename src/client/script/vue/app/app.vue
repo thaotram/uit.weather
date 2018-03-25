@@ -6,21 +6,11 @@
     </div>
 </template>
 <script>
-import {
-    components
-} from 'modules';
-
 export default {
     name: 'App',
     components: {
-        ...components('layout'),
-        ...components('line'),
-        ...components('contain'),
-        ...components('items'),
-        ...components('units'),
-    },
-    mounted() {
-        // console.clear();
+        ...('./layout/header.vue'),
+        ...('./layout/body.vue')
     }
 };
 </script>

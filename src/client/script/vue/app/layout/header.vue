@@ -3,9 +3,9 @@
          class="row"
          size="50">
         <ai-contain child-class="row">
-            <router-link to="/"
-                         class="full"
-                         id="logo">
+            <router-link id="logo"
+                         to="/"
+                         class="full">
                 <ai-label text="Ứng dụng chia sẻ sách" />
             </router-link>
             <div id="search-box"
@@ -15,9 +15,9 @@
                           placeholder="Tìm kiếm" />
             </div>
             <ai-col class="square">
-                <ai-image size="30"
-                          class="round"
-                          :src="user.picture.thumbnail" />
+                <ai-image :src="user.picture.thumbnail"
+                          size="30"
+                          class="round" />
             </ai-col>
         </ai-contain>
     </div>

@@ -21,7 +21,8 @@ export default {
     name: 'Footer',
     components: {
         ...components('container'),
-        ...components('items')
+        ...components('items'),
+        ...-('items')
     }
 };
 </script>

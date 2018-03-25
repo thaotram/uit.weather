@@ -1,24 +1,24 @@
 <template>
-    <ai-row class="button"
-            :class="{ active: isActive }"
+    <ai-row :class="{ active: isActive }"
+            class="button"
             @click.native="buttonClick()">
-        <span class="icon"
-              v-if="icon !== ''">{{ icon }}</span>
-        <div class="br"
-             v-if="text !== '' && icon == ''" />
-        <span class="text"
-              v-if="text !== ''">{{ text }}</span>
+        <span v-if="icon !== ''"
+              class="icon">{{ icon }}</span>
+        <div v-if="text !== '' && icon == ''"
+             class="br" />
+        <span v-if="text !== ''"
+              class="text">{{ text }}</span>
         <slot/>
-        <div class="br"
-             v-if="text !== ''" />
+        <div v-if="text !== ''"
+             class="br" />
     </ai-row>
 </template>
 <script>
 import {
     components,
-    complier,
-    run,
-    find,
+    // complier,
+    // run,
+    // find,
     style
 } from 'modules';
 
@@ -89,33 +89,33 @@ export default {
         style.set(this, {
             size: style.get('size', this, 40)
         });
-        const args = [this.path, this.root, true].filter((value) => {
-            return value !== undefined;
-        });
-        const [parent, property] = find(...args);
-        if (parent
-            && property !== undefined
-            && parent[property] !== undefined) {
-            const value = parent[property];
-            this.$watch('value', () => {
-                complier(this, 'value', 'compiledValue', 'watchersValue', undefined, true);
-            });
-            complier(this, 'value', 'compiledValue', 'watchersValue', undefined, true);
-            this.$watch('compiledValue', () => {
-                this.updateIsActive(value);
-            });
-            this.buttonClick = () => {
-                run(parent, property, this.compiledValue, this);
-            };
-            if (typeof value !== 'function' && parent.constructor.name === 'VueComponent') {
-                parent.$watch(property, (value) => {
-                    this.updateIsActive(value);
-                });
-                this.updateIsActive(value);
-            }
-        } else {
-            // console.log(this.$el);
-        }
+        // const args = [this.path, this.root, true].filter((value) => {
+        //     return value !== undefined;
+        // });
+        // const [parent, property] = find(...args);
+        // if (parent
+        //     && property !== undefined
+        //     && parent[property] !== undefined) {
+        //     const value = parent[property];
+        //     this.$watch('value', () => {
+        //         complier(this, 'value', 'compiledValue', 'watchersValue', undefined, true);
+        //     });
+        //     complier(this, 'value', 'compiledValue', 'watchersValue', undefined, true);
+        //     this.$watch('compiledValue', () => {
+        //         this.updateIsActive(value);
+        //     });
+        //     this.buttonClick = () => {
+        //         run(parent, property, this.compiledValue, this);
+        //     };
+        //     if (typeof value !== 'function' && parent.constructor.name === 'VueComponent') {
+        //         parent.$watch(property, (value) => {
+        //             this.updateIsActive(value);
+        //         });
+        //         this.updateIsActive(value);
+        //     }
+        // } else {
+        //     // console.log(this.$el);
+        // }
     },
     methods: {
         updateIsActive(valueInPath) {

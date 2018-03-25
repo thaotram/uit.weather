@@ -1,37 +1,37 @@
 <template>
-    <div class="input"
-         v-if="type !== 'checkbox'"
-         :class="{ focus: focus }">
-        <input type="text"
+    <div v-if="type !== 'checkbox'"
+         :class="{ focus: focus }"
+         class="input">
+        <input v-if="type == 'text'"
                v-model="value"
-               v-if="type == 'text'"
-               @focus="focus = true"
-               @blur="focus = false"
                :class="{ highlight: highlight }"
-               :placeholder="placeholder">
-        <input type="number"
-               v-model.number="value"
-               v-else-if="type == 'number'"
+               :placeholder="placeholder"
+               type="text"
                @focus="focus = true"
-               @blur="focus = false"
+               @blur="focus = false">
+        <input v-else-if="type == 'number'"
+               v-model.number="value"
                :min="min"
                :max="max"
                :class="{ highlight: highlight }"
-               :placeholder="placeholder">
-        <textarea rows="1"
+               :placeholder="placeholder"
+               type="number"
+               @focus="focus = true"
+               @blur="focus = false">
+        <textarea v-else-if="type == 'textarea'"
                   v-model="value"
-                  v-else-if="type == 'textarea'"
-                  @focus="focus = true"
-                  @blur="focus = false"
                   :class="{ highlight: highlight }"
-                  :placeholder="placeholder" />
+                  :placeholder="placeholder"
+                  rows="1"
+                  @focus="focus = true"
+                  @blur="focus = false" />
     </div>
-    <ai-button class="input"
-               v-else-if="type == 'checkbox'"
+    <ai-button v-else-if="type == 'checkbox'"
+               :path="path"
+               class="input"
                icon=""
                text="Thư mục abc"
-               value="@"
-               :path="path" />
+               value="@" />
 </template>
 <script>
 import {

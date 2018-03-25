@@ -12,7 +12,8 @@ const nanobar = new Nanobar({
 
 const view = (path, folder, name) => ({
     path: path,
-    component: require(`./vue/routes/_${folder}/_${name}.vue`).default
+    component: () =>
+        import (`./vue/routes/_${folder}/_${name}.vue`)
 });
 
 const router = new VueRouter({
@@ -21,12 +22,12 @@ const router = new VueRouter({
 
         view('/book', 'book', 'book'),
         view('/book/:title', 'book', 'book.title'),
-        
+
         view('/manager', 'manager', 'manager'),
         view('/manager/keep', 'manager', 'manager.keep'),
         view('/manager/share', 'manager', 'manager.share'),
         view('/manager/onshare', 'manager', 'manager.onshare'),
-        
+
         view('/share', 'share', 'share'),
 
         view('/user/:name', 'user', 'user.name'),

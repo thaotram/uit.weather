@@ -1,6 +1,6 @@
 <template>
-    <div class="image"
-         :style="srcStyle" />
+    <div :style="srcStyle"
+         class="image" />
 </template>
 <script>
 import {

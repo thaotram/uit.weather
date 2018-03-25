@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import logger from '../logger';
 import openInEditor from 'launch-editor-middleware';
 import webpack from 'webpack';
@@ -10,7 +11,7 @@ const webpackCompiler = webpack(webpackDev);
 
 export default function(app) {
     process.env.NODE_ENV === 'development'
-        ? app.use(webpackDevMiddleware(webpackCompiler, {
+        ? (app.use(webpackDevMiddleware(webpackCompiler, {
             stats: {
                 hash: false,
                 version: false,
@@ -30,7 +31,6 @@ export default function(app) {
             before(app) {
                 app.use('/__open-in-editor', openInEditor());
             },
-        }))
-        && app.use(webpackHotMiddleware(webpackCompiler))
-        : app.use(express.static('src/client/static'));
+        })) && app.use(webpackHotMiddleware(webpackCompiler)))
+        : app.use(express.static(path.resolve(__dirname, '../../client')));
 }

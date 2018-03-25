@@ -13,8 +13,6 @@ import {
 export default {
     name: 'AiTemplate',
     components: {
-        ...components('contain'),
-        ...components('items')
     }
 };
 </script>

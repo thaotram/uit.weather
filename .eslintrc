@@ -8,7 +8,9 @@
         "eslint:recommended",
         "plugin:vue/recommended"
     ],
+    "parser": "vue-eslint-parser",
     "parserOptions": {
+        "parser": "babel-eslint",
         "ecmaVersion": 8,
         "sourceType": "module",
         "ecmaFeatures": {
@@ -20,6 +22,7 @@
         "vue"
     ],
     "rules": {
+        "import/no-named-as-default-member": "off",
         "vue/max-attributes-per-line": [2, {
             "singleline": 1,
             "multiline": {
@@ -59,6 +62,12 @@
         "operator-linebreak": ["error", "before"],
         "eol-last": "off",
         "no-throw-literal": "off",
-        "prefer-const": "error"
+        "prefer-const": "error",
+        "no-global-assign": ["error", {
+            "exceptions": ["Object"]
+        }]
+    },
+    "globals": {
+        "_": true
     }
 }

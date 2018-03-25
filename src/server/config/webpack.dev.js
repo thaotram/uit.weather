@@ -1,22 +1,17 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import globalConfig from '../../../webpack.global';
 import openInEditor from 'launch-editor-middleware';
 import path from 'path';
 import webpack from 'webpack';
+var equals = (a, b) => a.toString() == b.toString();
 
-export default {
+const development = {
     mode: 'development',
-    cache: true,
     entry: [
         'webpack-hot-middleware/client',
         'webpack/hot/dev-server',
         './src/client/script/script.js'
     ],
-    target: 'web',
-    devtool: '#source-map',
-    output: {
-        filename: 'script.js',
-        path: path.resolve(__dirname, './dist/client')
-    },
     devServer: {
         hot: true,
         contentBase: './dist/client',
@@ -24,53 +19,6 @@ export default {
             app.use('/__open-in-editor', openInEditor('code'));
         },
     },
-    module: {
-        rules: [{
-            test: /\.vue$/,
-            loader: 'vue-loader',
-            query: {
-                presets: ['es2015', 'stage-2']
-            }
-        }, {
-            test: /\.scss$/,
-            use: [{
-                loader: 'style-loader'
-            }, {
-                loader: 'css-loader'
-            }, {
-                loader: 'sass-loader'
-            }]
-        }, {
-            test: /\.js$/,
-            loader: 'babel-loader',
-            exclude: /node_modules/,
-            query: {
-                presets: ['es2015', 'stage-2']
-            }
-        }, {
-            test: /\.(png|jpg|gif|svg|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-            loader: 'file-loader',
-            options: {
-                name: '[name].[ext]?[hash]'
-            }
-        }, {
-            test: /\.json$/,
-            use: 'json-loader'
-        }]
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new HtmlWebpackPlugin({
-            template: 'src/client/index.html',
-            minify: {
-                collapseWhitespace: true,
-                removeComments: true,
-                removeRedundantAttributes: true,
-                removeScriptTypeAttributes: true,
-                removeStyleLinkTypeAttributes: true
-            }
-        })
-    ],
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         modules: [
@@ -79,3 +27,15 @@ export default {
         ]
     }
 };
+const config = Object.assign({}, globalConfig, development);
+
+config.plugins.push(
+    new webpack.HotModuleReplacementPlugin(),
+);
+config.module
+    .rules.find(rule => equals(rule.test, /\.vue$/))
+    .use.push({
+        loader: path.resolve('./src/server/config/import.loader.js')
+    });
+
+module.exports = config;
