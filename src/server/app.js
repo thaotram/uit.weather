@@ -13,16 +13,23 @@ const port = process.env.PORT || 5;
 const server = http.createServer(app);
 const io = SocketIO(server);
 
-import log from './log';
+import log from 'log';
 
 AppConfig(app, io);
 AppExpress(app);
 AppSocket(io);
 
-server.listen(port);
-
-log('┏', `App.js`, '━', chalk.magenta);
-log('┃', `Environment : ${process.env.NODE_ENV}`, '', chalk.magenta);
-log('┃', `Url         : http://127.0.0.1:${port}`, '', chalk.magenta);
-log('┃', `Time        : ${moment().format('hh:mm:ss')}`, '', chalk.magenta);
-log('┗', ``, '━', chalk.magenta);
+server.listen(port, () => {
+    log(
+        {
+            Environment: process.env.NODE_ENV,
+            Url: `http://127.0.0.1:${port}`,
+            Time: `${moment().format('hh:mm:ss')}`,
+        },
+        {
+            title: 'App.js',
+            color: chalk.blue,
+            length: 55,
+        },
+    );
+});

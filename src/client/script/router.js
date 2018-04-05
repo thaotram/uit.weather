@@ -7,31 +7,16 @@ Vue.use(VueRouter);
 const nanobar = new Nanobar({
     classname: 'my-class',
     id: 'nanobar',
-    target: document.getElementById('what')
-});
-
-const view = (path, folder, name) => ({
-    path: path,
-    component: () =>
-        import (`./vue/routes/_${folder}/_${name}.vue`)
+    target: document.getElementById('what'),
 });
 
 const router = new VueRouter({
     routes: [
-        view('/', 'home', 'home'),
-
-        view('/book', 'book', 'book'),
-        view('/book/:title', 'book', 'book.title'),
-
-        view('/manager', 'manager', 'manager'),
-        view('/manager/keep', 'manager', 'manager.keep'),
-        view('/manager/share', 'manager', 'manager.share'),
-        view('/manager/onshare', 'manager', 'manager.onshare'),
-
-        view('/share', 'share', 'share'),
-
-        view('/user/:name', 'user', 'user.name'),
-    ]
+        {
+            path: './',
+            component: () => import('./vue/routes/home.vue'),
+        },
+    ],
 });
 
 router.beforeEach((to, from, next) => {

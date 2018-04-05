@@ -1,32 +1,20 @@
 <template>
     <div id="body">
-        <ai-contain class="nav">
-            <ai-navigator :left="left"
-                          :right="right" />
-        </ai-contain>
         <router-view id="view"
                      ref="view" />
-        <ai-footer/>
     </div>
 </template>
-
 <script>
-import {
-    components
-} from 'modules';
-
 export default {
     name: 'Body',
     components: {
-        ...components('layout/footer'),
-        ...components('line'),
-        ...components('navigator'),
-        ...components('container')
+        ...'../../container/contain.vue',
+        ...'../../units/line.vue',
     },
     data: () => ({
         left: [],
-        right: []
-    })
+        right: [],
+    }),
 };
 </script>
 <style lang="scss"
@@ -34,7 +22,7 @@ export default {
 #body {
     overflow: auto;
     min-height: calc(100% - 50px);
-    >.navigator {
+    > .navigator {
         margin: 20px auto;
     }
 }

@@ -1,10 +1,12 @@
 {
     "eslint.enable": true,
     "eslint.validate": [
-        "javascript", {
+        "javascript",
+        {
             "language": "html",
             "autoFix": true
-        }, {
+        },
+        {
             "language": "vue",
             "autoFix": true
         }
@@ -21,7 +23,7 @@
         "package-lock.json"
     ],
 
-    // 
+    //
     "line-counter.includes": [
         "**/*.js",
         "**/*.json",

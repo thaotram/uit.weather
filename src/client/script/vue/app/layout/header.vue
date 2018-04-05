@@ -6,36 +6,26 @@
             <router-link id="logo"
                          to="/"
                          class="full">
-                <ai-label text="Ứng dụng chia sẻ sách" />
+                <ai-label text="Thời tiết" />
             </router-link>
-            <div id="search-box"
-                 class="row"
-                 size="30">
-                <ai-input class="search"
-                          placeholder="Tìm kiếm" />
-            </div>
-            <ai-col class="square">
-                <ai-image :src="user.picture.thumbnail"
-                          size="30"
-                          class="round" />
-            </ai-col>
         </ai-contain>
     </div>
 </template>
 <script>
-import {
-    components,
-    user
-} from 'modules';
+import { user } from 'modules';
 
 export default {
     name: 'Header',
     components: {
-        ...components('container'),
-        ...components('units')
+        ...'../../container/contain.vue',
+        ...'../../container/col.vue',
+        ...'../../container/row.vue',
+        ...'../../units/image.vue',
+        ...'../../units/label.vue',
+        ...'../../units/input.vue',
     },
     data: () => ({
-        user: user.one()
+        user: user.one(),
     }),
 };
 </script>

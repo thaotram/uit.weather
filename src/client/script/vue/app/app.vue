@@ -9,9 +9,9 @@
 export default {
     name: 'App',
     components: {
-        ...('./layout/header.vue'),
-        ...('./layout/body.vue')
-    }
+        ...'./layout/header.vue',
+        ...'./layout/body.vue',
+    },
 };
 </script>
 <style lang="scss">
