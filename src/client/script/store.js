@@ -25,10 +25,17 @@ export default new Vuex.Store({
                 self = self[list[0]];
                 list.shift();
             }
-            if (typeof self[list[0]] == 'object' && Array.isArray(self[list[0]])) {
+            if (
+                typeof self[list[0]] == 'object' &&
+                Array.isArray(self[list[0]])
+            ) {
                 self[list[0]].push(payload.value);
-            } else console.error('Commit `push` vào một thành viên không phải mảng', payload);
-        }
+            } else
+                console.error(
+                    'Commit `push` vào một thành viên không phải mảng',
+                    payload,
+                );
+        },
     },
     getters: (function getter(getters, object, path = '') {
         for (const key in object) {
@@ -47,5 +54,5 @@ export default new Vuex.Store({
             }
         }
         return getters;
-    })({}, state)
+    })({}, state),
 });

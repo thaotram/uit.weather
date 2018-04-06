@@ -1,6 +1,6 @@
 .col {
     flex-direction: column;
-    >.line {
+    > .line {
         margin: 0 auto;
         min-height: $line-size;
         width: 100%;
@@ -9,7 +9,7 @@
 
 .row {
     flex-direction: row;
-    >.line {
+    > .line {
         margin: 0;
         min-width: $line-size;
     }
@@ -23,20 +23,20 @@
 .row {
     display: flex;
     overflow: hidden;
-    >* {
+    > * {
         &.noHover {
-            cursor: default!important;
+            cursor: default !important;
         }
         &.full {
             flex: 1;
         }
     }
-    >.line {
+    > .line {
         &.light {
             background-color: #f0f0f0;
         }
         &.dark {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: #1c1c24;
         }
     }
 }
@@ -50,7 +50,7 @@
 }
 
 .inline-flex {
-    >* {
+    > * {
         display: inline-flex;
         vertical-align: middle;
     }

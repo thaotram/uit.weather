@@ -1,5 +1,5 @@
-import Vue from 'vue';
 // import io from 'socket.io-client';
+import Vue from 'vue';
 import router from './router';
 import store from './store';
 import app from './vue/app/app.vue';
@@ -9,7 +9,8 @@ new Vue({
     el: '#app',
     router,
     store,
-    render: h => h(app, {
-        ref: 'app'
-    })
+    render: h =>
+        h(app, {
+            ref: 'app',
+        }),
 });

@@ -4,10 +4,7 @@
         "browser": true,
         "es6": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:vue/recommended"
-    ],
+    "extends": ["eslint:recommended", "plugin:vue/recommended"],
     "parser": "vue-eslint-parser",
     "parserOptions": {
         "parser": "babel-eslint",
@@ -18,54 +15,59 @@
             "experimentalObjectRestSpread": true
         }
     },
-    "plugins": [
-        "vue"
-    ],
+    "plugins": ["vue"],
     "rules": {
         "import/no-named-as-default-member": "off",
-        "vue/max-attributes-per-line": [2, {
-            "singleline": 1,
-            "multiline": {
-                "max": 1,
-                "allowFirstLine": true
+        "vue/max-attributes-per-line": [
+            2,
+            {
+                "singleline": 1,
+                "multiline": {
+                    "max": 1,
+                    "allowFirstLine": true
+                }
             }
-        }],
-        "vue/html-indent": ["error", 4, {
-            "attribute": 1,
-            "closeBracket": 0,
-            "alignAttributesVertically": true,
-            "ignores": []
-        }],
+        ],
+        "vue/html-indent": [
+            "error",
+            4,
+            {
+                "attribute": 1,
+                "closeBracket": 0,
+                "alignAttributesVertically": true,
+                "ignores": []
+            }
+        ],
         "indent": [
             "warn",
-            4, {
+            4,
+            {
                 "MemberExpression": 1
             }
         ],
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
+        "linebreak-style": ["error", "windows"],
         "quotes": [
-            "warn", "single", {
+            "warn",
+            "single",
+            {
                 "avoidEscape": true,
                 "allowTemplateLiterals": true
             }
         ],
-        "semi": [
-            "error",
-            "always"
-        ],
+        "semi": ["error", "always"],
         "no-console": "off",
         "no-unused-vars": "warn",
         "space-before-function-paren": ["error", "never"],
-        "operator-linebreak": ["error", "before"],
+        "operator-linebreak": ["error", "after"],
         "eol-last": "off",
         "no-throw-literal": "off",
         "prefer-const": "error",
-        "no-global-assign": ["error", {
-            "exceptions": ["Object"]
-        }]
+        "no-global-assign": [
+            "error",
+            {
+                "exceptions": ["Object"]
+            }
+        ]
     },
     "globals": {
         "_": true

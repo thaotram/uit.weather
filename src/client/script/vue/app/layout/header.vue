@@ -17,12 +17,12 @@ import { user } from 'modules';
 export default {
     name: 'Header',
     components: {
-        ...'../../container/contain.vue',
-        ...'../../container/col.vue',
-        ...'../../container/row.vue',
-        ...'../../units/image.vue',
-        ...'../../units/label.vue',
-        ...'../../units/input.vue',
+        ...'@/container/contain.vue',
+        ...'@/container/col.vue',
+        ...'@/container/row.vue',
+        ...'@/units/image.vue',
+        ...'@/units/label.vue',
+        ...'@/units/input.vue',
     },
     data: () => ({
         user: user.one(),
@@ -31,9 +31,9 @@ export default {
 </script>
 <style lang="scss">
 #header {
-    color: #666;
-    background: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color: #ddd;
+    background: #23232d;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     z-index: 2;
     padding-right: 8px;
     #logo {

@@ -8,7 +8,7 @@ const development = {
     entry: [
         'webpack-hot-middleware/client',
         'webpack/hot/dev-server',
-        './src/client/script/script.js'
+        './src/client/script/script.js',
     ],
     devServer: {
         hot: true,
@@ -17,17 +17,13 @@ const development = {
             app.use('/__open-in-editor', openInEditor('code'));
         },
     },
-    resolve: {
-        extensions: ['.js', '.vue', '.json'],
-        modules: [
-            path.resolve(__dirname, '../../../node_modules'),
-            path.resolve(__dirname, '../../../src/client/script/modules')
-        ]
-    }
 };
 const config = Object.assign({}, globalConfig, development);
 
-config.plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
-);
+config.plugins.push(new webpack.HotModuleReplacementPlugin());
+config.resolve.modules = [
+    path.resolve(__dirname, '../../../node_modules'),
+    path.resolve(__dirname, '../../../src/client/script/modules'),
+];
+
 module.exports = config;

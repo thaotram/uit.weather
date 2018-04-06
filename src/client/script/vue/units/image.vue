@@ -3,22 +3,20 @@
          class="image" />
 </template>
 <script>
-import {
-    style
-} from 'modules';
+import { style } from 'modules';
+
 export default {
-    name: 'AiImage',
     props: {
         src: {
             type: String,
             required: true,
-            default: '#'
+            default: '#',
         },
         link: {
             type: String,
             required: false,
-            default: '/'
-        }
+            default: '/',
+        },
     },
     style: {
         group: 'default',
@@ -27,27 +25,27 @@ export default {
             '[size="#{$size}"] .image': [
                 'height: #{$size}px',
                 'width:  #{$size}px',
-                'min-width:  #{$size}px'
+                'min-width:  #{$size}px',
             ],
             '.image[size="#{$size}"]': [
                 'height: #{$size}px',
                 'width:  #{$size}px',
-                'min-width:  #{$size}px'
-            ]
-        }
+                'min-width:  #{$size}px',
+            ],
+        },
     },
     computed: {
         srcStyle: function() {
             return {
-                backgroundImage: `url(${this.src})`
+                backgroundImage: `url(${this.src})`,
             };
-        }
+        },
     },
     mounted() {
         style.set(this, {
-            size: this.size || style.get('size', this, 40)
+            size: this.size || style.get('size', this, 40),
         });
-    }
+    },
 };
 </script>
 <style lang="scss">

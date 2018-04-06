@@ -34,46 +34,44 @@
                value="@" />
 </template>
 <script>
-import {
-    components,
-    style
-} from 'modules';
+import { style } from 'modules';
+
 export default {
     name: 'Input',
     components: {
-        ...components('units/button')
+        ...'@/units/button.vue',
     },
     props: {
         path: {
             type: String,
-            default: ''
+            default: '',
         },
         placeholder: {
             type: String,
-            default: ''
+            default: '',
         },
         type: {
             type: String,
-            default: 'text'
+            default: 'text',
         },
         min: {
             type: String,
-            default: '1'
+            default: '1',
         },
         max: {
             type: Number,
-            default: 10
+            default: 10,
         },
         root: {
             type: String,
-            default: undefined
-        }
+            default: undefined,
+        },
     },
     data() {
         return {
             value: '',
             highlight: false,
-            focus: false
+            focus: false,
         };
     },
     style: {
@@ -83,28 +81,26 @@ export default {
             '[size="#{$size}"] .input > input': [
                 'height: #{$size}px',
                 'padding: 0 #{$size * 0.3}px',
-                'font-size: #{$size * 0.15 + 7}px'
+                'font-size: #{$size * 0.15 + 7}px',
             ],
-            '[size="#{$size}"] .input.square > input': [
-                'width: #{$size}px'
-            ],
+            '[size="#{$size}"] .input.square > input': ['width: #{$size}px'],
             '[size="#{$size}"] .input > textarea': [
                 'padding: #{$size * 0.3}px #{$size * 0.3}px',
-                'font-size: #{($size * 0.2 + 8)}px'
+                'font-size: #{($size * 0.2 + 8)}px',
             ],
             '[size="#{$size}"] .input > .checkbox': [
                 'line-height: #{$size}px',
                 'height: #{$size}px',
-                'width: #{$size}px'
+                'width: #{$size}px',
             ],
             '[size="#{$size}"] .input > .checkbox > span': [
-                'line-height: #{$size}px'
-            ]
-        }
+                'line-height: #{$size}px',
+            ],
+        },
     },
     mounted() {
         style.set(this, {
-            size: style.get('size', this, 40)
+            size: style.get('size', this, 40),
         });
         setTimeout(() => {
             this.updateTextareaHeight();
@@ -115,9 +111,12 @@ export default {
             if (this.type === 'textarea') {
                 const el = this.$el.querySelector('textarea');
                 el.style.height = 'auto';
-                el.style.height = Number(el.scrollHeight + el.offsetHeight - el.clientHeight) + 'px';
+                el.style.height =
+                    Number(
+                        el.scrollHeight + el.offsetHeight - el.clientHeight,
+                    ) + 'px';
             }
-        }
-    }
+        },
+    },
 };
 </script>

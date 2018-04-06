@@ -1,33 +1,27 @@
 <template>
-    <div class="full">
-        a
-    </div>
+    <ai-row class="full">
+        <ai-map class="map full"/>
+        <ai-line class="dark"/>
+        <ai-col class="right"/>
+    </ai-row>
 </template>
 
 <script>
-import state from '../../state';
-
 export default {
-    name: 'HomePage',
-    components: {},
-    data: () => ({
-        book:
-            state.book.books[
-                Math.floor(Math.random() * state.book.books.length)
-            ],
-        books: state.book.books.filter(() => true),
-    }),
-    created() {
-        this.$parent.left = [['Trang chủ', '/']];
-        this.$parent.right = [
-            ['Sách', '/book'],
-            ['Quản lý sách', '/manager'],
-            ['Chia sẻ sách', '/share'],
-        ];
+    components: {
+        ...'@/special/map/map.vue',
+        ...'@/container/row.vue',
+        ...'@/container/col.vue',
+        ...'@/units/line.vue',
     },
 };
 </script>
 <style lang="scss"
        scoped>
-
+.row {
+    background-color: #2c2c36;
+}
+.right {
+    flex: 0.35;
+}
 </style>

@@ -5,22 +5,20 @@ import Nanobar from 'nanobar';
 Vue.use(VueRouter);
 
 const nanobar = new Nanobar({
-    classname: 'my-class',
     id: 'nanobar',
-    target: document.getElementById('what'),
 });
 
 const router = new VueRouter({
     routes: [
         {
-            path: './',
+            path: '/',
             component: () => import('./vue/routes/home.vue'),
         },
     ],
 });
 
 router.beforeEach((to, from, next) => {
-    nanobar.go(70);
+    nanobar.go(90);
     next();
 });
 

@@ -5,9 +5,9 @@
     word-wrap: break-word;
 }
 
-*:not(.noTransition) {
-    transition: all 0.2s;
-}
+// *:not(.noTransition) {
+//     transition: all 0.2s;
+// }
 
 html,
 body {
@@ -31,7 +31,7 @@ ul {
 
 ::selection {
     background: rgba(222, 98, 98, 0.8);
-    color: #FFF;
+    color: #fff;
     text-shadow: none;
 }
 
@@ -62,10 +62,10 @@ img {
 }
 
 hr {
-    background-color: #D4D4D4;
+    background-color: #d4d4d4;
     border: 0px;
     clear: both;
-    color: #D4D4D4;
+    color: #d4d4d4;
     height: 0.5px;
     margin-bottom: 0;
 }
@@ -80,7 +80,7 @@ $scrollbar-size: 8px;
 
 ::-webkit-scrollbar-thumb {
     background-color: rgba($blue, 0.4);
-    border: solid rgba($blue, 0.0);
+    border: solid rgba($blue, 0);
     border-width: 0 0 0 1px;
 }
 
@@ -89,24 +89,23 @@ $scrollbar-size: 8px;
     font-weight: bold;
 }
 
-
 [blue] {
-    >.crescent {
+    > .crescent {
         background-color: rgba($blue, 0.7);
     }
 
-    >* {
+    > * {
         background-color: $blue;
         box-shadow: 0 0 10px rgba($blue, 0.8);
     }
 }
 
 .bg-blue {
-    background-color: #3498db
+    background-color: #3498db;
 }
 
 .blue {
-    color: $blue
+    color: $blue;
 }
 
 $green: #27ae60;
@@ -114,10 +113,10 @@ $green: #27ae60;
 [green] {
     border-radius: 50px;
     box-shadow: 0 0 10px rgba($green, 0.8);
-    >.crescent {
+    > .crescent {
         background-color: rgba($green, 0.7);
     }
-    >* {
+    > * {
         background-color: $green;
     }
 }
@@ -127,18 +126,17 @@ $green: #27ae60;
 }
 
 .bg-green {
-    background-color: $green
+    background-color: $green;
 }
-
 
 $red: #e74c3c;
 [red] {
     border-radius: 50px;
     box-shadow: 0 0 10px rgba($red, 0.8);
-    >.crescent {
+    > .crescent {
         background-color: rgba($red, 0.7);
     }
-    >* {
+    > * {
         background-color: $red;
     }
 }
@@ -148,17 +146,17 @@ $red: #e74c3c;
 }
 
 .bg-red {
-    background-color: #e74c3c
+    background-color: #e74c3c;
 }
 
 $orange: #e67e22;
 [orange] {
     border-radius: 50px;
     box-shadow: 0 0 10px rgba($orange, 0.8);
-    >.crescent {
+    > .crescent {
         background-color: rgba($orange, 0.7);
     }
-    >* {
+    > * {
         background-color: $orange;
     }
 }
@@ -167,10 +165,10 @@ $violet: #9b59b6;
 [violet] {
     border-radius: 50px;
     box-shadow: 0 0 10px rgba($violet, 0.8);
-    >.crescent {
+    > .crescent {
         background-color: rgba($violet, 0.7);
     }
-    >* {
+    > * {
         background-color: $violet;
     }
 }
@@ -180,17 +178,17 @@ $violet: #9b59b6;
 }
 
 .bg-violet {
-    background-color: $violet
+    background-color: $violet;
 }
 
 $dark-green: #1abc9c;
 [dark-green] {
     border-radius: 50px;
     box-shadow: 0 0 10px rgba($dark-green, 0.8);
-    >.crescent {
+    > .crescent {
         background-color: rgba($dark-green, 0.7);
     }
-    >* {
+    > * {
         background-color: $dark-green;
     }
 }
@@ -200,17 +198,17 @@ $dark-green: #1abc9c;
 }
 
 .bg-dark-green {
-    background-color: #1abc9c
+    background-color: #1abc9c;
 }
 
 $dark-blue: #34495e;
 [dark-blue] {
     border-radius: 50px;
     box-shadow: 0 0 10px rgba($dark-blue, 0.8);
-    >.crescent {
+    > .crescent {
         background-color: rgba($dark-blue, 0.7);
     }
-    >* {
+    > * {
         background-color: $dark-blue;
     }
 }

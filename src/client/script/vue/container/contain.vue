@@ -11,9 +11,9 @@ export default {
     props: {
         childClass: {
             type: String,
-            default: undefined
-        }
-    }
+            default: undefined,
+        },
+    },
 };
 </script>
 <style lang="scss">
@@ -24,7 +24,7 @@ export default {
         flex-wrap: wrap;
         width: auto;
     }
-    >div {
+    > div {
         overflow: visible;
         max-width: 1120px;
         margin: 0 auto;
@@ -32,14 +32,14 @@ export default {
 }
 
 // width < 600px
-@media all and (max-width:575px) {
+@media all and (max-width: 575px) {
     .contain {
         padding: 0 10px;
     }
 }
 
 // 600px < width
-@media all and (min-width:576px) {
+@media all and (min-width: 576px) {
     .contain {
         padding: 0 50px;
     }

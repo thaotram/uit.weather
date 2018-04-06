@@ -2,15 +2,17 @@
     <div id="app"
          class="col">
         <ai-header/>
-        <ai-body ref="body" />
+        <ai-line class="dark" />
+        <router-view id="view"
+                     ref="view" />
     </div>
 </template>
 <script>
 export default {
     name: 'App',
     components: {
-        ...'./layout/header.vue',
-        ...'./layout/body.vue',
+        ...'@/app/layout/header.vue',
+        ...'@/units/line.vue',
     },
 };
 </script>

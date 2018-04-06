@@ -2,7 +2,5 @@
     <div class="line" />
 </template>
 <script>
-export default {
-    name: 'AiLine'
-};
+export default {};
 </script>

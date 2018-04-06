@@ -6,7 +6,6 @@ import {
     style
 } from 'modules';
 export default {
-    name: 'space',
     style: {
         group: 'default',
         overwrite: false,

@@ -15,79 +15,73 @@
 </template>
 <script>
 import {
-    components,
     // complier,
     // run,
     // find,
-    style
+    style,
 } from 'modules';
 
 export default {
-    name: 'Button',
     components: {
-        ...components('row')
+        ...'@/container/row.vue',
     },
     props: {
         path: {
             type: String,
-            default: ''
+            default: '',
         },
         value: {
             type: String,
-            default: ''
+            default: '',
         },
         text: {
             type: String,
-            default: ''
+            default: '',
         },
         icon: {
             type: String,
-            default: ''
+            default: '',
         },
         root: {
             type: Object,
-            default: undefined
-        }
+            default: undefined,
+        },
     },
     style: {
         group: 'default',
         overwrite: false,
         rules: {
-            '[size="#{$size}"] .button': [
-                'min-height: #{$size}px'
-            ],
-            '[size="#{$size}"] .button > .br': [
-                'width: #{$size *0.3}px'
-            ],
+            '[size="#{$size}"] .button': ['min-height: #{$size}px'],
+            '[size="#{$size}"] .button > .br': ['width: #{$size *0.3}px'],
             '[size="#{$size}"] .button > .slot': [
                 'padding: 0 #{$size *0.3}px',
-                'font-size: #{$size * 0.2 + 7}px'
+                'font-size: #{$size * 0.2 + 7}px',
             ],
             '[size="#{$size}"] .button > .icon': [
                 'min-height: #{$size}px',
                 'line-height: #{$size}px',
                 'width: #{$size}px',
                 'padding: 0',
-                'font-size: #{$size * 0.4}px'
+                'font-size: #{$size * 0.4}px',
             ],
             '[size="#{$size}"] .button > .text': [
                 'line-height: #{$size }px',
                 'padding: 0',
-                'font-size: #{$size * 0.15 + 7}px'
-            ]
-        }
+                'font-size: #{$size * 0.15 + 7}px',
+            ],
+        },
     },
     data() {
         return {
             isActive: false,
             compiledValue: '',
             watchersValue: [],
-            buttonClick: () => {}
+            buttonClick: () => {},
         };
     },
     mounted() {
         style.set(this, {
-            size: style.get('size', this, 40)
+            size: style.get('size', this, 40),
         });
         // const args = [this.path, this.root, true].filter((value) => {
         //     return value !== undefined;
@@ -126,13 +120,16 @@ export default {
                     if (this.compiledValue === '@') {
                         this.isActive = valueInPath;
                     } else {
-                        this.isActive = valueInPath === this.compiledValue.substr(1);
+                        this.isActive =
+                            valueInPath === this.compiledValue.substr(1);
                     }
                 } else {
-                    this.isActive = valueInPath === this.compiledValue && this.compiledValue !== '';
+                    this.isActive =
+                        valueInPath === this.compiledValue &&
+                        this.compiledValue !== '';
                 }
             }
-        }
-    }
+        },
+    },
 };
 </script>
