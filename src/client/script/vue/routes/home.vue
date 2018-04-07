@@ -22,6 +22,6 @@ export default {
     background-color: #2c2c36;
 }
 .right {
-    flex: 0.35;
+    flex: 1;
 }
 </style>

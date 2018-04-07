@@ -83,6 +83,7 @@ export default {
         style.set(this, {
             size: style.get('size', this, 40),
         });
+
         // const args = [this.path, this.root, true].filter((value) => {
         //     return value !== undefined;
         // });

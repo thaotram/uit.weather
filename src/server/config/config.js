@@ -13,8 +13,8 @@ const sessionConfig = session({
         path: '/',
         httpOnly: true,
         secure: false,
-        maxAge: null
-    }
+        maxAge: null,
+    },
 });
 
 export default function(app, io) {
@@ -23,13 +23,18 @@ export default function(app, io) {
     });
     app.use(sessionConfig);
     app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({
-        extended: true
-    }));
+    app.use(
+        bodyParser.urlencoded({
+            extended: true,
+        }),
+    );
     app.use(cookieParser());
-    app.use('/__open-in-editor', openInEditor({
-        editor: 'code'
-    }));
+    app.use(
+        '/__open-in-editor',
+        openInEditor({
+            editor: 'code',
+        }),
+    );
     app.set('json spaces', 2);
     appConfigClient(app);
 }

@@ -6,13 +6,16 @@
             <router-link id="logo"
                          to="/"
                          class="full">
-                <ai-label text="Thời tiết" />
+                <ai-label class="center"
+                          text="Thời tiết" />
             </router-link>
         </ai-contain>
     </div>
 </template>
 <script>
 import { user } from 'modules';
+
+import l from '../../units/label';
 
 export default {
     name: 'Header',
@@ -21,8 +24,9 @@ export default {
         ...'@/container/col.vue',
         ...'@/container/row.vue',
         ...'@/units/image.vue',
-        ...'@/units/label.vue',
         ...'@/units/input.vue',
+        // ...'@/units/label.vue',
+        'ai-label': l,
     },
     data: () => ({
         user: user.one(),
@@ -49,15 +53,7 @@ export default {
             font-family: 'Pacifico', cursive;
             font-size: 1.2em;
             flex: 1;
-            text-align: left;
-        }
-    }
-    #search-box {
-        align-self: center;
-        border-radius: 30px;
-        border: 0.75px solid rgba(black, 0.1);
-        input {
-            padding: 0 15px;
+            text-align: center;
         }
     }
 }

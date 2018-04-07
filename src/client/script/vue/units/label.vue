@@ -42,9 +42,7 @@ export default {
         },
     },
     mounted() {
-        style.set(this, {
-            size: style.get('size', this, 40),
-        });
+        style.set(this, { size: style.get('size', this, 40) });
         this.compiledText = this.text;
         this.$watch('text', () => {
             this.compiledText = this.text;

@@ -9,7 +9,7 @@ import AppSocket from './socket/socket';
 import AppConfig from './config/config';
 
 const app = express();
-const port = process.env.PORT || 5;
+const port = process.env.PORT || 80;
 const server = http.createServer(app);
 const io = SocketIO(server);
 

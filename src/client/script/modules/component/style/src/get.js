@@ -1,7 +1,9 @@
-module.exports = function get(property, self, defaultValue = undefined) {
+export default function get(property, self, defaultValue = undefined) {
     let value;
     if (property === 'size') {
-        value = Number(self.$el.getAttribute('size'));
+        if (self.$el.getAttribute) {
+            value = Number(self.$el.getAttribute('size'));
+        }
         if (!value) {
             value = get('parentSize', self, defaultValue);
         }
@@ -13,7 +15,9 @@ module.exports = function get(property, self, defaultValue = undefined) {
             value = closest.getAttribute('size');
         } while (value == null);
     } else {
-        console.warn('property is undefined, value will be set to defaultValue');
+        console.warn(
+            'property is undefined, value will be set to defaultValue',
+        );
     }
     return value || defaultValue;
-};
+}

@@ -20,14 +20,16 @@ export default function(app) {
                 modules: false,
                 colors: true,
             },
-            // logger: webpackLog(55),
             before(app) {
                 app.use('/__open-in-editor', openInEditor());
             },
         };
         app.use(webpackDevMiddleware(webpackCompiler, config));
         app.use(webpackHotMiddleware(webpackCompiler));
-    } else {
-        app.use(express.static(path.resolve(__dirname, '../../client')));
+        app.use(express.static(path.resolve(__dirname, '../../client/static')));
+    }
+    else {
+        app.use(express.static(path.resolve(__dirname, '../../client/static')));
+        app.use(express.static(path.resolve(__dirname, '../../../dist/client')));
     }
 }
