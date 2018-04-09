@@ -10,7 +10,6 @@
         "build:client": "webpack",
         "build": "cross-env NODE_ENV=production npm-run-all build:server build:client",
         "run": "cross-env NODE_ENV=production node dist/server/app",
-        "_": "cross-env NODE_ENV=production nodemon dist/server/app",
         "dev": "cross-env NODE_ENV=development nodemon src/server/app.js --exec babel-node",
         "test": "mocha --compilers js:babel-core/register",
         "chrome": "Start-Process \"chrome.exe\" \"ai.ai\" --unsafely-treat-insecure-origin-as-secure=http://ai.ai/"

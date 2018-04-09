@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 // import logger from '../logger';
-import { webpack as webpackLog } from 'log';
+// import { webpack as webpackLog } from 'log';
 import webpack from 'webpack';
 import openInEditor from 'launch-editor-middleware';
 import webpackDev from './webpack.dev';

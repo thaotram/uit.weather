@@ -48,7 +48,7 @@ export default {
             };
         },
         circumference() {
-            return this.size * Math.PI;
+            return (this.size - this.width) * Math.PI;
         },
         offset() {
             return this.circumference - this.percent / 100 * this.circumference;

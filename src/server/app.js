@@ -7,7 +7,7 @@ import SocketIO from 'socket.io';
 
 import AppConfig from './config/config';
 import AppExpress from './express/express';
-import AppSocket from './socket/socket';
+// import AppSocket from './socket/socket';
 
 const app = express();
 const port = process.env.PORT || 80;
@@ -16,7 +16,7 @@ const io = SocketIO(server);
 
 AppConfig(app, io);
 AppExpress(app);
-AppSocket(io);
+// AppSocket(io);
 
 server.listen(port, () => {
     log(

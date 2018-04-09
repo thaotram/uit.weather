@@ -73,7 +73,8 @@ export default {
         * {
             transition: all 0s;
         }
-        .gmnoprint, .gm-style-cc {
+        .gmnoprint,
+        .gm-style-cc {
             display: none;
         }
         &::after {

@@ -51,13 +51,13 @@
                 </div>
             </ai-col>
         </ai-row>
-        <div class="rain col">
+        <ai-col class="temperatureChart">
             <div class="text">
                 Nhiệt độ 24h tiếp theo
             </div>
-            <canvas ref="rain" 
+            <canvas ref="temperatureChart" 
                     height="150"/>
-        </div>
+        </ai-col>
         <div class="row s4 u2">
             <div class="row full">
                 <div class="full">
@@ -102,7 +102,7 @@ import computed from '../../../modules/component/computed/computed';
 import moment from 'moment';
 import axios from 'axios';
 import icon from './icon';
-import rain from './rain';
+import temperatureChart from './temperatureChart';
 import { TweenLite } from 'gsap';
 
 export default {
@@ -117,7 +117,7 @@ export default {
     },
     data() {
         return {
-            rain: null,
+            temperatureChart: null,
             temperature: 0,
             apparentTemperature: 0,
             humidity: 0,
@@ -146,19 +146,19 @@ export default {
     },
     watch: {
         forecast(forecast) {
-            if (!this.rain) {
-                const ctx = this.$refs.rain.getContext('2d');
-                this.rain = rain(ctx);
+            if (!this.temperatureChart) {
+                const ctx = this.$refs.temperatureChart.getContext('2d');
+                this.temperatureChart = temperatureChart(ctx);
             }
             window.nanobar.go(100);
 
-            this.rain.data.labels = forecast.hourly.data
+            this.temperatureChart.data.labels = forecast.hourly.data
                 .slice(0, 25)
                 .map(hour => moment.unix(hour.time));
-            this.rain.data.datasets[0].data = forecast.hourly.data
+            this.temperatureChart.data.datasets[0].data = forecast.hourly.data
                 .slice(0, 25)
                 .map(hour => hour.temperature);
-            this.rain.update();
+            this.temperatureChart.update();
 
             TweenLite.to(this.$data, 0.5, {
                 temperature: forecast.currently.temperature,
@@ -269,7 +269,7 @@ $color: #3e7bd4;
             }
         }
     }
-    > .rain {
+    > .temperatureChart {
         margin-top: 10px;
         background-color: $background-color;
         box-shadow: 0 0 25px $background-color;
