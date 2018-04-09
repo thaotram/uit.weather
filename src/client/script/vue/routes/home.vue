@@ -1,14 +1,15 @@
-<template>
+rs<template>
     <ai-row class="full">
         <ai-map class="map full"/>
         <ai-line class="dark"/>
-        <ai-col class="right"/>
+        <ai-detail class="right"/>
     </ai-row>
 </template>
 
 <script>
 export default {
     components: {
+        ...'@/special/detail/detail.vue',
         ...'@/special/map/map.vue',
         ...'@/container/row.vue',
         ...'@/container/col.vue',
@@ -22,6 +23,6 @@ export default {
     background-color: #2c2c36;
 }
 .right {
-    flex: 1;
+    width: 500px;
 }
 </style>

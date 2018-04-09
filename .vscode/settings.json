@@ -12,25 +12,18 @@
         }
     ],
     "files.exclude": {
-        // "dist": true,
+        "dist": true,
         "**/.vscode": true,
-        // "**/node_modules": true
+        "**/node_modules": true
     },
-    // Files excluded from counting.
-    "line-counter.excludes": [
+    "git.ignoreLimitWarning": true,
+    "terminal.integrated.fontSize": 12,
+    "LineCount.excludes": [
         "**/.vscode/**",
         "**/node_modules/**",
-        "package-lock.json"
-    ],
-
-    //
-    "line-counter.includes": [
-        "**/*.js",
-        "**/*.json",
-        "**/*.scss",
-        "**/*.vue",
-        "**/*.index"
-    ],
-    "git.ignoreLimitWarning": true,
-    "terminal.integrated.fontSize": 12
+        "**/*.svg",
+        "dist",
+        "yarn-error.log",
+        "yarn.lock"
+    ]
 }

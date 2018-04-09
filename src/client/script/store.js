@@ -1,16 +1,19 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import VuexPersistedstate from 'vuex-persistedstate';
 import state from './state';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     state,
+    plugins: [VuexPersistedstate()],
     mutations: {
         set(state, payload) {
             if (!payload.path) return;
             let self = state;
             const list = payload.path.split('.');
+            if (!list) return;
             while (list.length > 1) {
                 self = self[list[0]];
                 list.shift();

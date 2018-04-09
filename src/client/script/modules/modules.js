@@ -6,17 +6,15 @@ import run from './component/run/run';
 // import find from './component/find/find';
 import computed from './component/computed/computed';
 import data from './component/data/data';
-import user from './user/user';
 
-module.exports = {
+export default {
     components,
     style,
     data,
     complier,
     computed,
     run,
-    user,
     image: {
-        average
-    }
+        average,
+    },
 };

@@ -13,10 +13,6 @@
     </div>
 </template>
 <script>
-import { user } from 'modules';
-
-import l from '../../units/label';
-
 export default {
     name: 'Header',
     components: {
@@ -25,12 +21,8 @@ export default {
         ...'@/container/row.vue',
         ...'@/units/image.vue',
         ...'@/units/input.vue',
-        // ...'@/units/label.vue',
-        'ai-label': l,
+        ...'@/units/label.vue',
     },
-    data: () => ({
-        user: user.one(),
-    }),
 };
 </script>
 <style lang="scss">

@@ -4,7 +4,7 @@ import dark from './dark';
 export default function(self) {
     const geocoder = new google.maps.Geocoder();
 
-    const map = new google.maps.Map(self.$el.querySelector('.map'), {
+    const map = new google.maps.Map(self.$refs.map, {
         mapTypeControl: false,
         fullscreenControl: false,
         streetViewControl: false,

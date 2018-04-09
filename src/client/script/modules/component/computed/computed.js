@@ -6,7 +6,7 @@ import state from '../../../state';
  * ta có thể gọi trực tiếp theo kiểu: view.thuộc_tính
  * @param {string} path là path trong state, không có dấu chấm
  */
-module.exports = function(path) {
+export default function(path) {
     const out = {};
     for (const property in state[path]) {
         out[property] = {
@@ -16,10 +16,10 @@ module.exports = function(path) {
             set(value) {
                 this.$store.commit('set', {
                     path: `${path}.${property}`,
-                    value: value
+                    value: value,
                 });
-            }
+            },
         };
     }
     return out;
-};
+}

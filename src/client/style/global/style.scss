@@ -5,9 +5,9 @@
     word-wrap: break-word;
 }
 
-// *:not(.noTransition) {
-//     transition: all 0.2s;
-// }
+*:not(.noTransition) {
+    transition: all 0.2s;
+}
 
 html,
 body {
@@ -30,7 +30,7 @@ ul {
 }
 
 ::selection {
-    background: rgba(222, 98, 98, 0.8);
+    background: rgba(#3e7bd4, 0.3);
     color: #fff;
     text-shadow: none;
 }
@@ -72,16 +72,16 @@ hr {
 
 // ----- scrollbar -----
 $blue: #3498db;
-$scrollbar-size: 8px;
+$scrollbar-size: 12px;
 ::-webkit-scrollbar {
     width: $scrollbar-size;
     height: $scrollbar-size;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba($blue, 0.4);
-    border: solid rgba($blue, 0);
-    border-width: 0 0 0 1px;
+    background-color: #23232d;
+    // border: solid rgba(#3e7bd4, 0);
+    // border-width: 0 0 0 1px;
 }
 
 .bold,

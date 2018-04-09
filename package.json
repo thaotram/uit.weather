@@ -12,7 +12,8 @@
         "run": "cross-env NODE_ENV=production node dist/server/app",
         "_": "cross-env NODE_ENV=production nodemon dist/server/app",
         "dev": "cross-env NODE_ENV=development nodemon src/server/app.js --exec babel-node",
-        "test": "mocha --compilers js:babel-core/register"
+        "test": "mocha --compilers js:babel-core/register",
+        "chrome": "Start-Process \"chrome.exe\" \"ai.ai\" --unsafely-treat-insecure-origin-as-secure=http://ai.ai/"
     },
     "nodemonConfig": {
         "watch": [
@@ -31,13 +32,14 @@
     },
     "homepage": "https://github.com/phamhongphuc/uit.weather#readme",
     "dependencies": {
-        "@google/maps": "^0.4.6",
         "axios": "^0.18.0",
         "body-parser": "^1.18.2",
+        "chart.js": "^2.7.2",
         "cookie-parser": "^1.4.3",
+        "cors": "^2.8.4",
         "express": "^4.16.3",
         "express-session": "^1.15.6",
-        "googleapis": "^28.1.0",
+        "gsap": "^1.20.4",
         "log": "phamhongphuc/log",
         "moment": "^2.22.0",
         "nanobar": "^0.4.2",
@@ -46,7 +48,8 @@
         "vue": "^2.5.16",
         "vue-import-loader": "phamhongphuc/vue-import-loader",
         "vue-router": "^3.0.1",
-        "vuex": "^3.0.1"
+        "vuex": "^3.0.1",
+        "vuex-persistedstate": "^2.5.1"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
@@ -60,7 +63,7 @@
         "chalk": "^2.3.2",
         "cross-env": "^5.1.4",
         "css-loader": "^0.28.11",
-        "eslint": "^4.19.0",
+        "eslint": "^4.19.1",
         "eslint-config-standard": "^11.0.0",
         "eslint-loader": "^2.0.0",
         "eslint-plugin-html": "^4.0.2",
@@ -68,14 +71,14 @@
         "eslint-plugin-node": "^6.0.1",
         "eslint-plugin-promise": "^3.7.0",
         "eslint-plugin-standard": "^3.0.1",
-        "eslint-plugin-vue": "^4.3.0",
+        "eslint-plugin-vue": "^4.4.0",
         "eslint-plugin-vue-libs": "^2.1.0",
         "express-open-in-editor": "^3.1.1",
         "file-loader": "^1.1.11",
         "html-webpack-plugin": "^3.2.0",
         "json-loader": "^0.5.7",
         "launch-editor-middleware": "^2.2.1",
-        "mocha": "^5.0.4",
+        "mocha": "^5.0.5",
         "node-sass": "^4.8.3",
         "nodemon": "^1.17.3",
         "npm-run-all": "^4.1.2",
@@ -84,11 +87,11 @@
         "style-loader": "^0.20.3",
         "vue-eslint-parser": "^2.0.3",
         "vue-hot-reload-api": "^2.3.0",
-        "vue-loader": "^14.2.1",
+        "vue-loader": "^14.2.2",
         "vue-template-compiler": "^2.5.16",
-        "webpack": "^4.4.1",
-        "webpack-cli": "^2.0.12",
-        "webpack-dev-middleware": "^3.1.0",
+        "webpack": "^4.5.0",
+        "webpack-cli": "^2.0.14",
+        "webpack-dev-middleware": "^3.1.2",
         "webpack-dev-server": "^3.1.1",
         "webpack-hot-middleware": "^2.21.2",
         "webpack-split-by-path": "^2.0.0"

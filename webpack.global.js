@@ -70,6 +70,7 @@ module.exports = {
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './src/client/script/vue'),
+            '#': path.resolve(__dirname, './src/client/script/modules'),
         },
         extensions: ['.js', '.vue', '.json'],
     },

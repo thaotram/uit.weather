@@ -1,19 +1,18 @@
+import log from 'log';
+import http from 'http';
+import chalk from 'chalk';
+import moment from 'moment';
 import express from 'express';
 import SocketIO from 'socket.io';
-import moment from 'moment';
-import chalk from 'chalk';
-import http from 'http';
 
+import AppConfig from './config/config';
 import AppExpress from './express/express';
 import AppSocket from './socket/socket';
-import AppConfig from './config/config';
 
 const app = express();
 const port = process.env.PORT || 80;
 const server = http.createServer(app);
 const io = SocketIO(server);
-
-import log from 'log';
 
 AppConfig(app, io);
 AppExpress(app);

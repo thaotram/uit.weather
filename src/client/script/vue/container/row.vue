@@ -4,24 +4,21 @@
     </div>
 </template>
 <script>
-import {
-    style
-} from 'modules';
+import style from '#/component/style/style';
+
 export default {
     name: 'Row',
     style: {
         group: 'default',
         overwrite: false,
         rules: {
-            '.row[size="#{$size}"]': [
-                'min-height: #{$size}px'
-            ]
-        }
+            '.row[size="#{$size}"]': ['min-height: #{$size}px'],
+        },
     },
     mounted() {
         style.set(this, {
-            size: style.get('size', this, 40)
+            size: style.get('size', this, 40),
         });
-    }
+    },
 };
 </script>

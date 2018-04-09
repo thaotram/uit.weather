@@ -6,7 +6,7 @@
     </ai-row>
 </template>
 <script>
-import { style } from 'modules';
+import style from '#/component/style/style';
 
 export default {
     name: 'Label',

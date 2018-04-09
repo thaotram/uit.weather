@@ -4,9 +4,8 @@
     </div>
 </template>
 <script>
-import {
-    style
-} from 'modules';
+import style from '#/component/style/style';
+
 export default {
     name: 'Col',
     style: {
