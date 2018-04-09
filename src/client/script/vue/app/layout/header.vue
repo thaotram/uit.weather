@@ -2,7 +2,8 @@
     <div id="header"
          class="row"
          size="50">
-        <ai-contain child-class="row">
+        <ai-contain class="full" 
+                    child-class="row" >
             <router-link id="logo"
                          to="/"
                          class="full">
@@ -31,7 +32,7 @@ export default {
     background: #23232d;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     z-index: 2;
-    padding-right: 8px;
+    padding-right: 12px;
     #logo {
         cursor: pointer;
         &:hover {

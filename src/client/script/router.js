@@ -4,7 +4,7 @@ import Nanobar from 'nanobar';
 
 Vue.use(VueRouter);
 
-const nanobar = new Nanobar({
+window.nanobar = new Nanobar({
     id: 'nanobar',
 });
 
@@ -18,13 +18,13 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    nanobar.go(90);
+    window.nanobar.go(90);
     next();
 });
 
 router.afterEach(() => {
     const body = document.getElementById('body');
-    nanobar.go(100);
+    window.nanobar.go(100);
     if (body) body.scrollTop = 0;
 });
 

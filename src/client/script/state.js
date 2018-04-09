@@ -7,6 +7,6 @@ export default {
         address: null,
     },
     detail: {
-        forecast: null
+        forecast: null,
     },
 };

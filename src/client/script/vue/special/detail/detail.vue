@@ -5,13 +5,13 @@
                 {{ icon(forecast.currently.icon) }}
             </div>
             <div class="temperature">
-                {{ temperature.toFixed(0) }}
+                {{ parseFloat(temperature).toFixed(0) }}
             </div>
             <div class="celsius">°C</div>
             <ai-col class="apparentTemperature full">
                 <div>Nhiệt độ biểu kiến</div>
                 <div class="row">
-                    <div>{{ apparentTemperature.toFixed(0) }}</div>
+                    <div>{{ parseFloat(apparentTemperature).toFixed(1) }}</div>
                     <div class="celsius">°C</div>
                 </div>
             </ai-col>
@@ -19,7 +19,7 @@
         <ai-row class="s2">
             <ai-col>
                 <ai-circle :percent="forecast.currently.humidity * 100"
-                           :text="`${(humidity * 100).toFixed(0)}%`"
+                           :text="`${parseFloat(humidity * 100).toFixed(0)}%`"
                            :size="100" />
                 <div class="text">
                     Độ ẩm
@@ -27,7 +27,7 @@
             </ai-col>
             <ai-col>
                 <ai-circle :percent="forecast.daily.data[0].precipProbability * 100"
-                           :text="`${(precipProbability * 100).toFixed(0)}%`"
+                           :text="`${(parseFloat(precipProbability * 100).toFixed(0))}%`"
                            :size="100" />
                 <div class="text">
                     Khả năng mưa
@@ -35,7 +35,7 @@
             </ai-col>
             <ai-col>
                 <ai-circle :percent="forecast.currently.cloudCover * 100"
-                           :text="`${(cloudCover * 100).toFixed(0)}%`"
+                           :text="`${(parseFloat(cloudCover * 100).toFixed(0))}%`"
                            :size="100" />
                 <div class="text">
                     Mây phủ
@@ -44,7 +44,7 @@
             <ai-col>
                 <ai-circle :start="forecast.currently.windBearing / 360 * 100 - 5"
                            :percent="10"
-                           :text="`${windGust.toFixed(0)} m/s`"
+                           :text="`${parseFloat(windGust).toFixed(1)} m/s`"
                            :size="100" />
                 <div class="text">
                     Vận tốc gió tối đa
@@ -64,7 +64,7 @@
                     Điểm sương:
                 </div>
                 <div>
-                    {{ dewPoint.toFixed(1) }}°C
+                    {{ parseFloat(dewPoint).toFixed(1) }}°C
                 </div>
             </div>
             <div class="row full">
@@ -72,7 +72,7 @@
                     Áp suất:
                 </div>
                 <div>
-                    {{ pressure.toFixed(1) }} hPa
+                    {{ parseFloat(pressure).toFixed(1) }} hPa
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
                     Tầm nhìn:
                 </div>
                 <div>
-                    {{ visibility.toFixed(1) }} Km
+                    {{ parseFloat(visibility).toFixed(1) }} Km
                 </div>
             </div>
             <div class="row full">
@@ -90,10 +90,11 @@
                     Ozone:
                 </div>
                 <div>
-                    {{ ozone.toFixed(1) }} DU
+                    {{ parseFloat(ozone).toFixed(1) }} DU
                 </div>
             </div>
         </div>
+        <div ref="nanobar"/>
     </div>
 </template>
 <script>
@@ -116,7 +117,6 @@ export default {
     },
     data() {
         return {
-            nanobar: null,
             rain: null,
             temperature: 0,
             apparentTemperature: 0,
@@ -150,11 +150,8 @@ export default {
                 const ctx = this.$refs.rain.getContext('2d');
                 this.rain = rain(ctx);
             }
-            // if (!this.nanobar) {
-            //     this.nanobar = new Nanobar({
-            //         id: 'rain',
-            //     });
-            // }
+            window.nanobar.go(100);
+
             this.rain.data.labels = forecast.hourly.data
                 .slice(0, 25)
                 .map(hour => moment.unix(hour.time));
@@ -177,6 +174,7 @@ export default {
             });
         },
         center(center) {
+            window.nanobar.go(75);
             axios
                 .post('/darksky', center)
                 .then(res => (this.forecast = res.data))
