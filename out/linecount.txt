@@ -1,0 +1,98 @@
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2018-04-09 13:22:35
+count workspace : e:\Code\OnGoing\uit.weather
+total files : 86
+total code lines : 3079
+total comment lines : 101
+total blank lines : 171
+
+.babelrc, code is 4, comment is 0, blank is 0.
+.eslintrc, code is 75, comment is 0, blank is 0.
+.gitignore, code is 43, comment is 3, blank is 17.
+.jsbeautifyrc, code is 17, comment is 0, blank is 0.
+.prettierrc, code is 8, comment is 0, blank is 0.
+package.json, code is 96, comment is 0, blank is 1.
+README.md, code is 28, comment is 0, blank is 10.
+src\client\index.html, code is 15, comment is 0, blank is 3.
+src\client\script\modules\component\complier\complier.js, code is 23, comment is 0, blank is 1.
+src\client\script\modules\component\complier\complierString.js, code is 40, comment is 4, blank is 3.
+src\client\script\modules\component\computed\computed.js, code is 18, comment is 6, blank is 1.
+src\client\script\modules\component\data\data.js, code is 8, comment is 6, blank is 1.
+src\client\script\modules\component\find\find.js, code is 52, comment is 0, blank is 1.
+src\client\script\modules\component\find\src\recursiveFind.js, code is 27, comment is 2, blank is 1.
+src\client\script\modules\component\load\components.js, code is 12, comment is 1, blank is 0.
+src\client\script\modules\component\run\run.js, code is 19, comment is 0, blank is 0.
+src\client\script\modules\component\style\src\calcVariable.js, code is 10, comment is 4, blank is 0.
+src\client\script\modules\component\style\src\get.js, code is 23, comment is 0, blank is 0.
+src\client\script\modules\component\style\src\getStyleElement.js, code is 18, comment is 0, blank is 2.
+src\client\script\modules\component\style\src\insertRule.js, code is 3, comment is 0, blank is 0.
+src\client\script\modules\component\style\src\set.js, code is 27, comment is 0, blank is 3.
+src\client\script\modules\component\style\src\setEachStyle.js, code is 9, comment is 0, blank is 1.
+src\client\script\modules\component\style\src\setRule.js, code is 22, comment is 1, blank is 1.
+src\client\script\modules\component\style\style.js, code is 6, comment is 0, blank is 1.
+src\client\script\modules\image\average.js, code is 27, comment is 5, blank is 8.
+src\client\script\modules\modules.js, code is 18, comment is 1, blank is 1.
+src\client\script\router.js, code is 25, comment is 0, blank is 6.
+src\client\script\script.js, code is 14, comment is 1, blank is 1.
+src\client\script\state.js, code is 12, comment is 0, blank is 0.
+src\client\script\store.js, code is 59, comment is 0, blank is 2.
+src\client\script\vue\app\app.vue, code is 27, comment is 0, blank is 0.
+src\client\script\vue\app\layout\header.vue, code is 53, comment is 0, blank is 0.
+src\client\script\vue\container\col.vue, code is 24, comment is 0, blank is 2.
+src\client\script\vue\container\contain.vue, code is 43, comment is 2, blank is 2.
+src\client\script\vue\container\layer.vue, code is 30, comment is 0, blank is 0.
+src\client\script\vue\container\layers.vue, code is 10, comment is 0, blank is 0.
+src\client\script\vue\container\row.vue, code is 23, comment is 0, blank is 1.
+src\client\script\vue\routes\home.vue, code is 27, comment is 0, blank is 1.
+src\client\script\vue\special\detail\detail.vue, code is 296, comment is 0, blank is 3.
+src\client\script\vue\special\detail\icon.js, code is 13, comment is 0, blank is 0.
+src\client\script\vue\special\detail\temperatureChart.js, code is 63, comment is 0, blank is 1.
+src\client\script\vue\special\map\dark.js, code is 80, comment is 0, blank is 0.
+src\client\script\vue\special\map\google.js, code is 45, comment is 1, blank is 6.
+src\client\script\vue\special\map\map.vue, code is 186, comment is 1, blank is 3.
+src\client\script\vue\units\button.vue, code is 104, comment is 30, blank is 2.
+src\client\script\vue\units\circle.vue, code is 77, comment is 0, blank is 0.
+src\client\script\vue\units\image.vue, code is 61, comment is 0, blank is 1.
+src\client\script\vue\units\input.vue, code is 121, comment is 0, blank is 1.
+src\client\script\vue\units\label.vue, code is 51, comment is 4, blank is 1.
+src\client\script\vue\units\line.vue, code is 8, comment is 0, blank is 0.
+src\client\script\vue\units\space.vue, code is 25, comment is 0, blank is 2.
+src\client\script\vue\units\text-input.vue, code is 57, comment is 0, blank is 1.
+src\client\static\favicon.png, it is a binary file.
+src\client\static\icon.png, it is a binary file.
+src\client\static\temperature.png, it is a binary file.
+src\client\style\_.scss, code is 90, comment is 1, blank is 3.
+src\client\style\_2.scss, code is 50, comment is 5, blank is 4.
+src\client\style\components\button-label.scss, code is 62, comment is 0, blank is 2.
+src\client\style\components\col-row.scss, code is 58, comment is 0, blank is 7.
+src\client\style\components\contain.scss, code is 0, comment is 0, blank is 0.
+src\client\style\components\image.scss, code is 0, comment is 0, blank is 0.
+src\client\style\components\input.scss, code is 17, comment is 0, blank is 0.
+src\client\style\components\layer.scss, code is 10, comment is 0, blank is 0.
+src\client\style\components\nanobar.scss, code is 9, comment is 1, blank is 0.
+src\client\style\fonts\aicon.eot, it is a binary file.
+src\client\style\fonts\aicon.ttf, it is a binary file.
+src\client\style\fonts\aicon.woff, it is a binary file.
+src\client\style\fonts\weather.eot, it is a binary file.
+src\client\style\fonts\weather.ttf, it is a binary file.
+src\client\style\fonts\weather.woff, it is a binary file.
+src\client\style\global\fonts.scss, code is 36, comment is 0, blank is 4.
+src\client\style\global\grid.scss, code is 47, comment is 6, blank is 6.
+src\client\style\global\layout.scss, code is 0, comment is 0, blank is 0.
+src\client\style\global\style.scss, code is 179, comment is 4, blank is 31.
+src\client\style\index.scss, code is 13, comment is 1, blank is 3.
+src\client\style\variables.scss, code is 4, comment is 0, blank is 1.
+src\server\app.js, code is 28, comment is 3, blank is 4.
+src\server\certificate\crt.crt, code is 21, comment is 2, blank is 0.
+src\server\certificate\key.key, code is 28, comment is 0, blank is 0.
+src\server\config\config.client.js, code is 31, comment is 2, blank is 2.
+src\server\config\config.js, code is 38, comment is 0, blank is 2.
+src\server\config\webpack.dev.js, code is 26, comment is 0, blank is 3.
+src\server\express\express.js, code is 28, comment is 1, blank is 1.
+src\server\socket\socket.js, code is 22, comment is 1, blank is 2.
+webpack.config.js, code is 14, comment is 0, blank is 3.
+webpack.global.js, code is 86, comment is 2, blank is 1.
+===============================================================================
