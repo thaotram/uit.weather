@@ -3,25 +3,41 @@
 ==================================================
 
 ## Keywords
-- Vue
-- Express
-- Nodemon
-- Webpack
-- Npm
-- Google Map API
-- Weather
+
+*   Vue
+*   Express
+*   Nodemon
+*   Webpack
+*   Npm
+*   Google Map API
+*   Weather
 
 ## Usage
 
-1. Install dependencies
+1.  Install dependencies
 
 `npm install` or `yarn`
 
-2. Run the application
+2.  Run the application
 
-`npm run dev`
+`npm run dev` or `yarn dev`
 
-## Description 
+3.  Build All project
+
+`npm run build` or `yarn run build`
+
+Or you can build front-end or back-end only
+
+`npm run build:client` or `yarn build:client`
+
+`npm run build:server` or `yarn build:server`
+
+4.  Run the code you have built
+
+`npm run run` or `yarn run`
+
+## Description
+
 ```
 ## 1. Mô tả vắn thiết định hướng thiết kế:
 Website được thiết kế dựa trên mục đích của nó: là nơi mà người khác có thể vào và xem thông tin thời tiết.

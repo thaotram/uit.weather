@@ -5,20 +5,21 @@
     "main": "index.js",
     "scripts": {
         "style": "scss --watch style/index.scss:dist/render.css",
-        "style-render": "scss --style compressed style/index.scss:dist/render.css",
+        "style-render":
+            "scss --style compressed style/index.scss:dist/render.css",
         "build:server": "babel src/server -d dist/server",
         "build:client": "webpack",
-        "build": "cross-env NODE_ENV=production npm-run-all build:server build:client",
+        "build":
+            "cross-env NODE_ENV=production npm-run-all build:server build:client",
         "run": "cross-env NODE_ENV=production node dist/server/app",
-        "dev": "cross-env NODE_ENV=development nodemon src/server/app.js --exec babel-node",
+        "dev":
+            "cross-env NODE_ENV=development nodemon src/server/app.js --exec babel-node",
         "test": "mocha --compilers js:babel-core/register",
-        "chrome": "Start-Process \"chrome.exe\" \"ai.ai\" --unsafely-treat-insecure-origin-as-secure=http://ai.ai/"
+        "chrome":
+            "Start-Process \"chrome.exe\" \"ai.ai\" --unsafely-treat-insecure-origin-as-secure=http://ai.ai/"
     },
     "nodemonConfig": {
-        "watch": [
-            "src/server",
-            "dist"
-        ]
+        "watch": ["src/server", "dist"]
     },
     "repository": {
         "type": "git",
