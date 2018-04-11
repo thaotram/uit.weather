@@ -12,6 +12,10 @@
 *   Google Map API
 *   Weather
 
+## Live
+
+[Visit site on heroku](https://uit-weather.herokuapp.com/#/)
+
 ## Usage
 
 1.  Install dependencies
