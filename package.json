@@ -2,7 +2,7 @@
     "name": "uit.weather",
     "version": "0.2.0",
     "description": "Edit Readme File",
-    "main": "index.js",
+    "main": "dist/server/app.js",
     "scripts": {
         "style": "scss --watch style/index.scss:dist/render.css",
         "style-render":
