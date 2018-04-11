@@ -17,7 +17,7 @@
         "**/node_modules": true
     },
     "git.ignoreLimitWarning": true,
-    "terminal.integrated.fontSize": 12,
+    // "terminal.integrated.fontSize": 12,
     "LineCount.excludes": [
         "**/.vscode/**",
         "**/node_modules/**",
